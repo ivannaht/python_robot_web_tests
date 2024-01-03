@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20240103 21:11:46.786" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="/Users/ihont/repos/python_robot_web_tests/tests">
+<suite id="s1-s1" name="Test Signin" source="/Users/ihont/repos/python_robot_web_tests/tests/test_signin.robot">
+<test id="s1-s1-t1" name="Valid Login" line="12">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240103 21:11:46.986" level="INFO">Opening browser 'Chrome' to base url 'http://127.0.0.1:3000/users/sign_in'.</msg>
+<status status="PASS" starttime="20240103 21:11:46.985" endtime="20240103 21:11:51.828"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>SmallTalks</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20240103 21:11:51.840" level="INFO">Page title is 'SmallTalks'.</msg>
+<status status="PASS" starttime="20240103 21:11:51.828" endtime="20240103 21:11:51.840"/>
+</kw>
+<status status="PASS" starttime="20240103 21:11:46.985" endtime="20240103 21:11:51.840"/>
+</kw>
+<kw name="Fill In Login Form">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:user_email</arg>
+<arg>test.robot@py.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 21:11:51.841" level="INFO">Typing text 'test.robot@py.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20240103 21:11:51.841" endtime="20240103 21:11:51.984"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:user_password</arg>
+<arg>Test!23456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 21:11:51.984" level="INFO">Typing password into text field 'id:user_password'.</msg>
+<msg timestamp="20240103 21:11:52.006" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240103 21:11:52.038" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240103 21:11:51.984" endtime="20240103 21:11:52.038"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Log in</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240103 21:11:52.038" level="INFO">Clicking button 'Log in'.</msg>
+<status status="PASS" starttime="20240103 21:11:52.038" endtime="20240103 21:11:52.652"/>
+</kw>
+<status status="PASS" starttime="20240103 21:11:51.840" endtime="20240103 21:11:52.652"/>
+</kw>
+<kw name="Verify Success Message">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>${MESSAGE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240103 21:11:52.676" level="INFO">${result} = Signed in successfully.</msg>
+<status status="PASS" starttime="20240103 21:11:52.652" endtime="20240103 21:11:52.676"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${result}</arg>
+<arg>Signed in successfully.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240103 21:11:52.676" endtime="20240103 21:11:52.676"/>
+</kw>
+<status status="PASS" starttime="20240103 21:11:52.652" endtime="20240103 21:11:52.676"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240103 21:11:52.676" endtime="20240103 21:11:52.786"/>
+</kw>
+<status status="PASS" starttime="20240103 21:11:46.985" endtime="20240103 21:11:52.786"/>
+</test>
+<doc>Validate Sign In Form</doc>
+<status status="PASS" starttime="20240103 21:11:46.807" endtime="20240103 21:11:52.787"/>
+</suite>
+<status status="PASS" starttime="20240103 21:11:46.787" endtime="20240103 21:11:52.788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test Signin">Tests.Test Signin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
