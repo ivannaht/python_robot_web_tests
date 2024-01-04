@@ -7,13 +7,13 @@ Documentation  A resource file with reusable keywords and variables.
 Library  SeleniumLibrary
 
 *** Variables ***
-${BASE URL}  http://127.0.0.1:3000
+${HOST}  127.0.0.1:3000
+${BASE_URL}  http://${HOST}/
 ${BROWSER}  Chrome
-${MESSAGE}  id:notice
 
 *** Keywords ***
 Open Browser To Home Page
-    Open Browser  ${BASE URL}  ${BROWSER}
+    Open Browser  ${BASE_URL}  ${BROWSER}
     Title Should Be  SmallTalks
 
 Close Browser Session
